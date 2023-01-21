@@ -12,7 +12,51 @@ const [username, email, projectName, description, license, dependencies, tests, 
 function writeToFile(fileName, data) {}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    console.log("Welcome to the ReadMe Generator. Please follow the following prompts");
+    inquirer
+        .prompt([
+            {
+                type: "input",
+                name: "username",
+                message: username
+            },
+
+            {
+                type: "input",
+                name: "email",
+                message: email
+            },
+
+            {
+                type: "input",
+                name: "projectName",
+                message: projectName
+            },
+
+            {
+                type: "input",
+                name: "description",
+                message: description
+            },
+
+            {
+                type: "list",
+                name: "license",
+                message: license,
+                choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"]
+            }
+        ])
+
+        .then(function(response) {
+            console.log(response.username);
+            console.log(response.email);
+            console.log(response.projectName);
+            console.log(response.description);
+            console.log(response.license);
+            
+        });
+}
 
 // Function call to initialize app
 init();
