@@ -9,7 +9,9 @@ const questions = ["What is your GitHub username?", "What is your email address?
 const [username, email, projectName, description, license, dependencies, tests, repoUsage, contributing] = questions;
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, data) {
+    
+}
 
 // TODO: Create a function to initialize app
 function init() {
@@ -45,6 +47,30 @@ function init() {
                 name: "license",
                 message: license,
                 choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"]
+            },
+
+            {
+                type: "input",
+                name: "dependencies",
+                message: dependencies
+            },
+
+            {
+                type: "input",
+                name: "tests",
+                message: tests
+            },
+
+            {
+                type: "input",
+                name: "repoUsage",
+                message: repoUsage
+            },
+
+            {
+                type: "input",
+                name: "contributing",
+                message: contributing
             }
         ])
 
@@ -54,6 +80,10 @@ function init() {
             console.log(response.projectName);
             console.log(response.description);
             console.log(response.license);
+            console.log(response.dependencies);
+            console.log(response.tests);
+            console.log(response.repoUsage);
+            console.log(response.contributing);
             
         });
 }
