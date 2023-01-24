@@ -12,7 +12,7 @@ const [username, email, projectName, description, license, dependencies, tests, 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
 
-    fs.writeFile('README.md', data, (err) => {
+    fs.writeFile('ExREADME.md', data, (err) => {
         if (err) {
             console.log('Oops - Something went wrong');
         }
@@ -86,7 +86,7 @@ function init() {
 
             console.log("Generating your README.md file...")
             const content = generateMarkDown(data)
-            writeToFile('EXREADME.md', content);
+            writeToFile('ExREADME.md', content);
             
         });
 }

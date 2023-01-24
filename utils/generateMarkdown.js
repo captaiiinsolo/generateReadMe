@@ -35,8 +35,6 @@ ${renderLicenseBadge(data.license)}
 
 ${data.description}
 
-${data.contributing}
-
 ## Usage
 
 ${data.repoUsage}
@@ -50,6 +48,10 @@ ${renderLicenseSection(data.license)}
 ${data.license}
 
 ${renderLicenseLink(data.license)}
+
+## Contributing
+
+${data.contributing}
 
 ## Author Info
 
