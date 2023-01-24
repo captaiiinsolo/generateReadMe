@@ -3,19 +3,14 @@
 
 ## Technology Used
 
+
 ## Description
 
-It generates a readme.md file based on user input
 
-Pay me money
 
 ## Usage
 
-Everything
 
-npm i
-
-npm tests
 
 ## License
     
