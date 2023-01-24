@@ -3,6 +3,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkDown = require('./utils/generateMarkdown');
 
+
 // TODO: Create an array of questions for user input
 const questions = ["What is your GitHub username?", "What is your email address?", "What is your project's name?", "Please wite a short description of your project -", "What kind of license should your project have?", "What command should be run to install dependencies?", "What command should be run to run tests?", "What does the user need to know about using the repo?", "What does the user need to know about contributing to the repo?"];
 
@@ -10,8 +11,15 @@ const [username, email, projectName, description, license, dependencies, tests, 
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    
+
+    fs.writeFile('README.md', JSON.stringify(data), (err) => {
+        if (err) {
+            console.log('Oops - Something went wrong');
+        }
+    });
 }
+    
+
 
 // TODO: Create a function to initialize app
 function init() {
@@ -74,16 +82,10 @@ function init() {
             }
         ])
 
-        .then(function(response) {
-            console.log(response.username);
-            console.log(response.email);
-            console.log(response.projectName);
-            console.log(response.description);
-            console.log(response.license);
-            console.log(response.dependencies);
-            console.log(response.tests);
-            console.log(response.repoUsage);
-            console.log(response.contributing);
+        .then((data) => {
+
+            console.log("Generating your README.md file...")
+            writeToFile('README.md', {...data});
             
         });
 }
